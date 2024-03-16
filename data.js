@@ -16,7 +16,7 @@ async function checkWeather() {
 
 checkWeather();
 
-document.getElementById("butt").onclick = function chara() {
+function chara() {
     
     var char = document.getElementById("charu").value;
     char = char.toLowerCase();
@@ -26,3 +26,13 @@ document.getElementById("butt").onclick = function chara() {
     document.getElementById("img2").src = `images/${char}2.png`
     }
 
+document.getElementById("butt").onclick = chara;
+
+var txt = document.getElementById("charu");
+var butt = document.getElementById("butt");
+
+txt.addEventListener("keydown", function(event) {
+    if (event.key == "Enter") {
+        butt.click();
+    }
+})
